@@ -87,7 +87,7 @@ while [ $# -gt 0 ]; do
                 exit 1
             fi
             echo "Checking certificate $3 from issuer $2"
-            openssl ocsp -issuer "$2" --cert "$3" -CAfile "$2" -url "http://$(hostname):9000" -resp_text
+            openssl ocsp -issuer "$2" -cert "$3" -CAfile "$2" -url "http://$(hostname):9000" -resp_text
             shift 3
             ;;
         help)
